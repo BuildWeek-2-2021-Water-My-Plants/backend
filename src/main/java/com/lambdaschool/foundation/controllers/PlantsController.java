@@ -32,6 +32,8 @@ public class PlantsController {
     // Update a plant - patch
     // Delete a plant
 
+    // https://watermyplantsbackend2021.herokuapp.com/users/plants
+    // *Get all plants by User
     @GetMapping(value = "/plants", produces = {"application/json"})
     public ResponseEntity<?> listPlantsByUser()
     {
@@ -42,6 +44,8 @@ public class PlantsController {
         return new ResponseEntity(currentuser.getPlants(), HttpStatus.OK);
     }
 
+    // https://watermyplantsbackend2021.herokuapp.com/users/plants
+    // *Post a plant from logged in user
     @PostMapping(value = "/plants", produces = {"application/json"})
     public ResponseEntity<?> addPlant(
             @RequestBody
@@ -63,6 +67,8 @@ public class PlantsController {
         return new ResponseEntity<>(newplant, responseHeaders, HttpStatus.CREATED);
     }
 
+    // https://watermyplantsbackend2021.herokuapp.com/users/plants/{id}
+    // *Update a plants info
     @PatchMapping(value = "/plants/{id}", produces = {"application/json"})
     public ResponseEntity<?> updatePlant(@RequestBody Plant updatePlant, @PathVariable long id) throws Exception
     {
@@ -85,6 +91,8 @@ public class PlantsController {
 
     }
 
+    // https://watermyplantsbackend2021.herokuapp.com/users/plants{id}
+    // *Delete a plant
     @DeleteMapping(value = "/plants/{plantid}", produces = {"application/json"})
     public ResponseEntity<?> deletePlant(@PathVariable long plantid)
     {

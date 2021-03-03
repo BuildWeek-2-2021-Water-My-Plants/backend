@@ -37,7 +37,9 @@ public class UserController
      * @return JSON list of all users with a status of OK
      * @see UserService#findAll() UserService.findAll()
      */
+    // Get a list of all users*
 //    @PreAuthorize("hasAnyRole('ADMIN')")
+    // https://watermyplantsbackend2021.herokuapp.com/users/users
     @GetMapping(value = "/users",
         produces = "application/json")
     public ResponseEntity<?> listAllUsers()
@@ -55,6 +57,7 @@ public class UserController
      * @return JSON object of the user you seek
      * @see UserService#findUserById(long) UserService.findUserById(long)
      */
+    // https://watermyplantsbackend2021.herokuapp.com/users/{userid}
     @GetMapping(value = "/user/{userId}",
         produces = "application/json")
     public ResponseEntity<?> getUserById(
@@ -74,6 +77,7 @@ public class UserController
      * @return JSON object of the user you seek
      * @see UserService#findByName(String) UserService.findByName(String)
      */
+    // https://watermyplantsbackend2021.herokuapp.com/users/user/{username}
     @GetMapping(value = "/user/name/{userName}",
         produces = "application/json")
     public ResponseEntity<?> getUserByName(
@@ -116,6 +120,8 @@ public class UserController
      * @throws URISyntaxException Exception if something does not work in creating the location header
      * @see UserService#save(User) UserService.save(User)
      */
+    // Create a user*
+    // https://watermyplantsbackend2021.herokuapp.com/users/user
     @PostMapping(value = "/user",
         consumes = "application/json")
     public ResponseEntity<?> addNewUser(
@@ -179,6 +185,8 @@ public class UserController
      * @return A status of OK
      * @see UserService#update(User, long) UserService.update(User, long)
      */
+    // *Update a user
+    // https://watermyplantsbackend2021.herokuapp.com/users/user/{id}
     @PatchMapping(value = "/user/{id}",
         consumes = "application/json")
     public ResponseEntity<?> updateUser(
@@ -199,6 +207,8 @@ public class UserController
      * @param id the primary key of the user you wish to delete
      * @return Status of OK
      */
+    // *Delete a user
+   // https://watermyplantsbackend2021.herokuapp.com/users/user/{id}
     @DeleteMapping(value = "/user/{id}")
     public ResponseEntity<?> deleteUserById(
         @PathVariable
@@ -216,6 +226,8 @@ public class UserController
      * @return JSON of the current user. Status of OK
      * @see UserService#findByName(String) UserService.findByName(authenticated user)
      */
+    // *Get current user info
+    // https://watermyplantsbackend2021.herokuapp.com/users/userinfo
     @ApiOperation(value = "returns the currently authenticated user",
         response = User.class)
     @GetMapping(value = "/userinfo",
