@@ -80,7 +80,7 @@ public class PlantsController {
 
         if (currentUser.getUserid() == updatePlant.getUser().getUserid())
         {
-            plantService.update(updatePlant, id);
+            plantService.update(updatePlant, updatePlant.getPlantid());
             return new ResponseEntity<>(HttpStatus.OK);
 
         } else {

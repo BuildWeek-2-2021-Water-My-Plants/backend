@@ -1,0 +1,95 @@
+// Get a list of all users* GET
+// https://watermyplantsbackend2021.herokuapp.com/users/users
+
+// POST- Create a user* - Don't have to be logged in(only one that doesnt require logged in user)
+// https://watermyplantsbackend2021.herokuapp.com/users/user
+
+Syntax to create a user-
+{
+    "username": "user1",
+    "password": "password",
+    "primaryemail": "user@email.com"
+}
+
+
+// PATCH- *Update a user info
+// https://watermyplantsbackend2021.herokuapp.com/users/user/{id}
+
+Syntax to update a user- can get userid from Get current user info
+{
+
+        "userid": 17,
+        "username": "louscreateduser78",
+        "primaryemail": "email@email1.com",
+
+}
+
+// Get a user by Id
+ // https://watermyplantsbackend2021.herokuapp.com/users/{userid}
+
+// *Delete a user
+// https://watermyplantsbackend2021.herokuapp.com/users/user/{id}
+
+// *Get current user info
+// Once you are logged in this get request will give you the logged in user info
+// https://watermyplantsbackend2021.herokuapp.com/users/userinfo
+
+// Get a user by Username
+ // https://watermyplantsbackend2021.herokuapp.com/users/user/{username}
+
+ // Plants
+ // *Get all plants by User
+ // Logged in users plants
+// https://watermyplantsbackend2021.herokuapp.com/users/plants
+
+// *Post a plant from logged in user
+// https://watermyplantsbackend2021.herokuapp.com/users/plants
+Syntax for posting a plant
+***** Needs user object attached to plant object ******
+* Once you log in save user info to local storage like you see it below
+* Use it to post a new plant to that users plant list
+
+{
+            "nickname": "objplant4000",
+            "species": "ficah4000",
+            "h20": "2400000",
+            "plantimg": "plantimg240000",
+            "user": {
+                "username": "barnbarn",
+                "primaryemail": "barnbarn@lambdaschool.local"
+            }
+
+}
+
+// *Update a plants info
+// https://watermyplantsbackend2021.herokuapp.com/users/plants/{id}
+
+Syntax for updating a plant
+
+{
+            "plantid": 19,
+            "nickname": "objplant40005078787878",
+            "species": "ficah400050",
+            "h20": "240000050",
+            "plantimg": "plantimg24000050",
+            "user": {
+                "userid": 11,
+                "username": "barnbarn",
+                "primaryemail": "barnbarn@lambdaschool.local"
+            }
+
+
+}
+
+
+
+// *Delete a plant
+// https://watermyplantsbackend2021.herokuapp.com/users/plants{id}
+
+// Login endpoint
+// https://watermyplantsbackend2021.herokuapp.com/login
+
+// Logout endpoint
+https://watermyplantsbackend2021.herokuapp.com/logout
+
+
