@@ -54,18 +54,15 @@ public class ResourceServerConfig
                 "/createnewuser")
             .permitAll()
             .antMatchers(HttpMethod.POST,
-                "/users/**")
+                "/users/**", "/login")
             .permitAll()
-            .antMatchers(HttpMethod.DELETE,
-                "/users/**")
-            .hasAnyRole("ADMIN")
-            .antMatchers(HttpMethod.PUT,
-                "/users/**")
+            .antMatchers(HttpMethod.DELETE, "/users/**")
+            .hasAnyRole("ADMIN", "USER", "DATA")
+            .antMatchers(HttpMethod.PUT, "/users/**")
             .authenticated()
-                .antMatchers(HttpMethod.PATCH,
-                        "/users/**")
+                .antMatchers(HttpMethod.PATCH, "/users/**")
                 .authenticated()
-            .antMatchers("/users/**",
+            .antMatchers(
                 "/useremails/**",
                 "/oauth/revoke-token",
                 "/logout", "/plants/**")

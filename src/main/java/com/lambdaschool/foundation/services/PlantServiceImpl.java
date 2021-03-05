@@ -66,6 +66,11 @@ public class PlantServiceImpl implements PlantService {
                 {
                     currentPlant.setPlantimg(updatePlant.getPlantimg());
                 }
+
+                if (updatePlant.getUser() != null)
+                {
+                    currentPlant.setUser(updatePlant.getUser());
+                }
             }
 
         }
